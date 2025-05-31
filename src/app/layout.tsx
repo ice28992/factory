@@ -28,9 +28,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <CssBaseline />
         <Header />
-          <Box sx={{ bgcolor: "#F4F4F4", minHeight: "100vh" }}>
+          <Box>
             <Container maxWidth='xs' sx={{ padding: 0 }}>
-              <Paper sx={{ px: 0, bgcolor: "white", minHeight: "100vh" }}>{children}</Paper>
+              <Paper sx={{ px: 0, bgcolor:"#fffaf7", height: "100vh" }}>{children}</Paper>
             </Container>
           </Box>
           <Footer />

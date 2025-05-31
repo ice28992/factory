@@ -9,10 +9,8 @@ interface Props {
 export default function LoginLayout({ children }: Props) {
   return (
     <>
-        <Box sx={{ backgroundColor: "#fff9f4" }}>
-          <Header />
+        <Box>
           {children}
-          <Footer />
         </Box>
     </>
   );
