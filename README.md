@@ -1,4 +1,4 @@
 ## pwa
 ```
-npx create-react-app my-app
+npx create-react-app pwa --template typescript
 ```
