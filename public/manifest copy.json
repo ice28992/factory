@@ -1,6 +1,6 @@
 {
-    "theme_color": "#008db7",
-    "background_color": "#008db7",
+    "theme_color": "#edde7b",
+    "background_color": "#edde7b",
     "display": "standalone",
     "scope": "/staff/",
     "start_url": "/staff",

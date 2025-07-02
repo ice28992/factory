@@ -9,9 +9,9 @@ export function Header() {
       justifyContent='space-between'
       alignItems='center'
       spacing={2}
-      sx={{ bgcolor: "#68a4d9", height: '60px' }}
+      sx={{ bgcolor: "#fdd35c", height: '60px' }}
     >
-      <Typography sx={{ fontSize: "30px", color: "white" }}>タイトル</Typography>
+      <Typography sx={{ fontSize: "30px", color: "#665a1a" }}>タイトル</Typography>
     </Stack>
     </Container>
   );

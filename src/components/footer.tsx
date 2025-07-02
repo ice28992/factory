@@ -18,9 +18,9 @@ export function Footer() {
   const pathname = usePathname();
 
   const footerButtonsList = [
-    { label: "トップ", icon: <Home sx={{ color: "white" }} />, link_to: "/home" },
-    { label: "記録一覧", icon: <Assignment sx={{ color: "white" }} />, link_to: "/record" },
-    { label: "目標設定", icon: <Flag sx={{ color: "white" }} />, link_to: "/target" },
+    { label: "トップ", icon: <Home sx={{ color: "#665a1a" }} />, link_to: "/home" },
+    { label: "記録一覧", icon: <Assignment sx={{ color: "#665a1a" }} />, link_to: "/record" },
+    { label: "目標設定", icon: <Flag sx={{ color: "#665a1a" }} />, link_to: "/target" },
   ];
 
   const footerButtons = footerButtonsList.map((elm) => {
@@ -33,7 +33,7 @@ export function Footer() {
         key={elm.label}
         value={elm.link_to}
         label={
-          <Typography fontSize={14} marginX={"-10px"} sx={{ color: "white" }}>
+          <Typography fontSize={14} marginX={"-10px"} sx={{ color: "#665a1a" }}>
             {elm.label}
           </Typography>
         }
@@ -51,7 +51,7 @@ export function Footer() {
           showLabels
           value={pathname}
           children={footerButtons}
-          sx={{ bgcolor: "#4496d3" ,height:'70px' }}
+          sx={{ bgcolor: "#fdd35c" ,height:'70px' }}
         />
       </Container>
     </Stack>

@@ -29,7 +29,7 @@ export default function RootLayout({
         <CssBaseline />
         <Header />
           <Box>
-            <Container maxWidth='xs' sx={{ padding: 0 }}>
+            <Container maxWidth='xs'>
               <Paper sx={{ px: 0, bgcolor:"#fffaf7", height: "100vh" }}>{children}</Paper>
             </Container>
           </Box>
