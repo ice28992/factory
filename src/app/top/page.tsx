@@ -8,7 +8,7 @@ const zen = Zen_Maru_Gothic({
 });
 
 // トップ
-export default function HomePage() {
+export default function TopPage() {
   return (
     <Stack className={zen.className}><br />
       <h2>トップ</h2>

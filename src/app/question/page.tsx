@@ -8,7 +8,7 @@ const zen = Zen_Maru_Gothic({
 });
 
 // 質問
-export default function HomePage() {
+export default function QuestionPage() {
   return (
     <Stack className={zen.className}><br />
       <h2>質問ページ</h2>
