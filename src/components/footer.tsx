@@ -10,7 +10,7 @@ import {
   Typography,
   colors,
 } from "@mui/material";
-import { Home, Assignment, Flag, Style } from "@mui/icons-material";
+import { Home, ThreeDRotation, QuestionAnswer, Style } from "@mui/icons-material";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -18,9 +18,9 @@ export function Footer() {
   const pathname = usePathname();
 
   const footerButtonsList = [
-    { label: "トップ", icon: <Home sx={{ color: "#665a1a" }} />, link_to: "/home" },
-    { label: "記録一覧", icon: <Assignment sx={{ color: "#665a1a" }} />, link_to: "/record" },
-    { label: "目標設定", icon: <Flag sx={{ color: "#665a1a" }} />, link_to: "/target" },
+    { label: "トップ", icon: <Home sx={{ color: "#665a1a" }} />, link_to: "/top" },
+    { label: "工場見学", icon: <ThreeDRotation sx={{ color: "#665a1a" }} />, link_to: "/factory" },
+    { label: "質問", icon: <QuestionAnswer sx={{ color: "#665a1a" }} />, link_to: "/question" },
   ];
 
   const footerButtons = footerButtonsList.map((elm) => {

@@ -7,11 +7,11 @@ const zen = Zen_Maru_Gothic({
   display: "swap",
 });
 
-// ホーム
+// 工場見学
 export default function HomePage() {
   return (
     <Stack className={zen.className}><br />
-      <h2>ハロー</h2>
+      <h2>Web工場見学</h2>
     </Stack>
   );
 }
