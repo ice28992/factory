@@ -10,7 +10,7 @@ const zen = Zen_Maru_Gothic({
 // トップ
 export default function TopPage() {
   return (
-    <Stack className={zen.className}><br />
+    <Stack className={zen.className} sx={{textAlign: "center"}}>
       <h2>トップ</h2>
     </Stack>
   );

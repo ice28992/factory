@@ -2,7 +2,6 @@ import { Stack, Button } from "@mui/material";
 import { KeyboardArrowRight, KeyboardArrowLeft} from "@mui/icons-material";
 import { Zen_Maru_Gothic } from "next/font/google";
 import { FieldViewer } from './content';
-import { Color } from "three";
 
 const zen = Zen_Maru_Gothic({
   weight: ["400"],
@@ -20,7 +19,7 @@ export default function FactoryPage() {
   
      <Button variant="contained" endIcon={<KeyboardArrowLeft />}
       sx={{
-        backgroundColor: '#edde7b',
+        backgroundColor: '#fdd35c',
         color: '#000',
         '&:hover': {
           backgroundColor: '#d4cc5f',
@@ -31,7 +30,7 @@ export default function FactoryPage() {
     </Button>
     <Button variant="contained" endIcon={<KeyboardArrowRight />}
       sx={{
-       backgroundColor: '#edde7b',
+       backgroundColor: '#fdd35c',
        color: '#000',
        '&:hover': {
          backgroundColor: '#d4cc5f',
