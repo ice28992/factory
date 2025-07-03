@@ -12,8 +12,8 @@ const zen = Zen_Maru_Gothic({
 export default function TopPage() {
   return (
     <Stack className={zen.className} sx={{textAlign: "center"}}>
-      <h2>ようこそ〇〇さん！</h2>
-      <p>Web上で360°見回す工場見学を体験できます！</p>
+      <h2>ようこそ！</h2>
+      <p>Web上で360°見回す工場見学を体験できます</p>
       <Divider style={{ width: "100%", border: "double #e3d7a3 3px" }} />
       <h3>見学場所一覧</h3>
       <ContentsList />

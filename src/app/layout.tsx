@@ -3,11 +3,12 @@ import { Box, Container, CssBaseline, Paper } from "@mui/material";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { AuthProvider } from "../../backend/context/auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PWAタイトル",
+  title: "Web工場見学",
   description: "なんか説明",
 };
 
@@ -27,6 +28,7 @@ export default function RootLayout({
 
       <body className={inter.className}>
         <CssBaseline />
+        <AuthProvider>
         <Header />
           <Box>
             <Container maxWidth='xs'>
@@ -34,6 +36,7 @@ export default function RootLayout({
             </Container>
           </Box>
           <Footer />
+          </AuthProvider>
       </body>
     </html>
   );

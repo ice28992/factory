@@ -9,6 +9,11 @@ interface FieldSize {
   y: number;
 }
 
+interface FieldViewerProps {
+  name: string;
+  image: string;
+}
+
 interface FieldObject {
   scene: THREE.Scene;
   camera: THREE.PerspectiveCamera | null;
@@ -42,7 +47,7 @@ export class Field {
     console.log(`フィールド "${name}" を作成しました (サイズ: ${size.x}x${size.y})`);
   }
 
-  initializeField(name: string) {
+  initializeField(name: string, image: string) {
     const field = this.fields[name];
     field.camera = new THREE.PerspectiveCamera(
       75,
@@ -52,8 +57,15 @@ export class Field {
     );
 
     const textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/image.png', (texture) => {
+    textureLoader.load(image, (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping;
+
+      if (field.skybox) {
+        field.scene.remove(field.skybox);
+        field.skybox.geometry.dispose();
+        (field.skybox.material as THREE.Material).dispose();
+      }
+
       
       const skyGeometry = new THREE.SphereGeometry(500, 60, 40);
       skyGeometry.scale(-1, 1, 1); // 反転して内側を表示
@@ -61,15 +73,12 @@ export class Field {
       const skySphere = new THREE.Mesh(skyGeometry, skyMaterial);
       field.scene.add(skySphere);
       field.skybox = skySphere;
-      console.log('360度スカイスフィアを設定しました');
     });
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(10, 10, 10);
     field.scene.add(directionalLight);
     field.light = directionalLight;
-
-    console.log(`フィールド "${name}" の初期化が完了しました。`);
   }
 
   createColorCanvas(color: THREE.Color): HTMLCanvasElement {
@@ -107,8 +116,6 @@ export class Field {
       this.animationFrames[name] = requestAnimationFrame(animate);
     };
     animate();
-
-    console.log(`フィールド "${name}" のレンダリングを開始しました。`);
   }
 
   stopRenderingField(name: string) {
@@ -119,26 +126,26 @@ export class Field {
       field.renderer.domElement.parentNode.removeChild(field.renderer.domElement);
     }
     cancelAnimationFrame(this.animationFrames[name]);
-    console.log(`フィールド "${name}" のレンダリングを停止しました。`);
   }
 }
 
 // FieldViewer コンポーネント
 const fieldInstance = new Field();
 
-export const FieldViewer: React.FC = () => {
+export const FieldViewer: React.FC<FieldViewerProps> = ({ name, image }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const fieldName = 'main';
 
   useEffect(() => {
-    fieldInstance.createField(fieldName);
-    fieldInstance.initializeField(fieldName);
-    fieldInstance.startRenderingField(fieldName, containerRef);
+    if (!fieldInstance.fields[name]) {
+      fieldInstance.createField(name);
+      fieldInstance.initializeField(name, image);
+    }
+    fieldInstance.startRenderingField(name, containerRef);
 
     return () => {
-      fieldInstance.stopRenderingField(fieldName);
+      fieldInstance.stopRenderingField(name);
     };
-  }, []);
+  }, [name, image]);
 
   return <div ref={containerRef} style={{ width: '100%', height: '400px' }} />;
 };
