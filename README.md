@@ -1,6 +1,7 @@
 # Web工場見学
 PBL型授業での制作物です。(企業名は明記していません。)
 また、画像は実際のものとは異なり[こちら](https://github.com/Kazuhito00/royalty-free-360-degree-images?tab=readme-ov-file)の画像をお借りしています。
+
 [参考資料](https://www.canva.com/design/DAGajx8OdDo/qXxujEPWRHOOPDQDSkhD1Q/edit)
 
 ## 概要
