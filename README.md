@@ -85,28 +85,6 @@ Three.jsを使用して、3D球を描画します。ユーザーはマウスで�
 
 ---
 
-## ディレクトリ構成
-
-```
-/your-project-name
-│
-├── /public
-│   ├── /images      # 画像などの静的ファイル
-│   └── /assets      # その他の静的アセット
-│
-├── /src
-│   ├── /components  # 再利用可能なReactコンポーネント
-│   ├── /pages       # Next.jsのページ
-│   ├── /styles      # CSSやスタイルファイル
-│   └── /utils       # ユーティリティ関数
-│
-├── .env.local       # Firebase設定
-├── package.json     # プロジェクトの依存関係
-└── README.md        # このファイル
-```
-
----
-
 ## 使用技術
 
 以下の画像は生成AIのGeminiを用いて生成しました。
