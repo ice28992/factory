@@ -1,13 +1,13 @@
 # Web工場見学
 PBL型授業での制作物です。
 [参考資料](https://www.canva.com/design/DAGajx8OdDo/qXxujEPWRHOOPDQDSkhD1Q/edit)
+
 ## 概要
 
 * **ログイン機能**：Googleアカウントでのログイン（Firebase Authentication）
 * **フロントエンド**：React（TypeScript）、Next.js（ルーティングとフォント管理）
 * **UIライブラリ**：MUI（Material UI）
 * **3Dレンダリング**：Three.jsで球体（3Dオブジェクト）の描画
-![factory](https://github.com/user-attachments/assets/0fc43931-5eba-49d5-a55f-d79c1a8b57e6)
 
 ---
 
@@ -106,6 +106,10 @@ Three.jsを使用して、3D球を描画します。ユーザーはマウスで�
 ---
 
 ## 使用技術
+
+![factory](https://github.com/user-attachments/assets/906e3149-30c1-471a-b7af-60eee08374f0)
+
+---
 
 ### フロントエンド
 
