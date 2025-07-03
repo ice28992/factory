@@ -1,46 +1,134 @@
-# Getting Started with Create React App
+# Web工場見学
+PBL型授業での制作物です。
+[参考資料](https://www.canva.com/design/DAGajx8OdDo/qXxujEPWRHOOPDQDSkhD1Q/edit)
+## 概要
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* **ログイン機能**：Googleアカウントでのログイン（Firebase Authentication）
+* **フロントエンド**：React（TypeScript）、Next.js（ルーティングとフォント管理）
+* **UIライブラリ**：MUI（Material UI）
+* **3Dレンダリング**：Three.jsで球体（3Dオブジェクト）の描画
+![factory](https://github.com/user-attachments/assets/0fc43931-5eba-49d5-a55f-d79c1a8b57e6)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## インストール手順
 
-### `npm start`
+### 1. リポジトリをクローン
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+git clone https://github.com/your-username/your-project-name.git
+cd your-project-name
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 2. 必要な依存パッケージをインストール
 
-### `npm test`
+Node.jsとnpmがインストールされていることを確認し、プロジェクトディレクトリ内で以下のコマンドを実行します。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+### 3. Firebase設定
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Firebaseを使用するために、Firebaseのプロジェクトを作成し、認証（Googleログイン）を有効にします。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Firebaseコンソール（[https://console.firebase.google.com/](https://console.firebase.google.com/)）にアクセスして新しいプロジェクトを作成します。
+2. 「Authentication」を選択し、Googleログインを有効にします。
+3. 「Project settings」からFirebaseの設定情報を取得します。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`.env.local` ファイルをプロジェクトのルートに作成し、以下のようにFirebaseの設定を追加します。
 
-### `npm run eject`
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-auth-domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 4. Firebase SDKのインストール
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install firebase
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 実行方法
 
-## Learn More
+開発サーバーを起動するには以下のコマンドを実行します。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run dev
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+これで、アプリケーションが `http://localhost:3000` で立ち上がり、ブラウザでアクセスすることができます。
+
+---
+
+## 機能
+
+### 1. Googleログイン
+
+GoogleアカウントでユーザーがアプリケーションにログインできるようにFirebase Authenticationを使用しています。
+
+* ユーザーがログインすると、ユーザー情報がコンソールに表示され、Googleアカウントを使用して認証が行われます。
+
+### 2. 3Dレンダリング
+
+Three.jsを使用して、3D球を描画します。ユーザーはマウスでインタラクティブに3Dシーンを操作できます。
+
+* `useEffect`と`useRef`を使って、Reactコンポーネント内でThree.jsの3Dシーンをレンダリングしています。
+
+---
+
+## ディレクトリ構成
+
+```
+/your-project-name
+│
+├── /public
+│   ├── /images      # 画像などの静的ファイル
+│   └── /assets      # その他の静的アセット
+│
+├── /src
+│   ├── /components  # 再利用可能なReactコンポーネント
+│   ├── /pages       # Next.jsのページ
+│   ├── /styles      # CSSやスタイルファイル
+│   └── /utils       # ユーティリティ関数
+│
+├── .env.local       # Firebase設定
+├── package.json     # プロジェクトの依存関係
+└── README.md        # このファイル
+```
+
+---
+
+## 使用技術
+
+### フロントエンド
+
+* **React**: ユーザーインターフェースの構築
+* **Next.js**: サーバサイドレンダリングとページルーティング
+* **MUI**: Material UIライブラリでUIコンポーネントを作成
+* **Three.js**: 3Dレンダリング
+
+### バックエンド
+
+* **Firebase Authentication**: Googleアカウント認証
+* **Firebase Firestore**: ユーザーデータ保存（オプション）
+
+---
+
+## 開発の進行
+
+### Firebase認証
+
+1. `firebase/auth`を使用してGoogleログイン機能を実装します。
+2. 認証後、ユーザー情報を表示する機能も追加予定です。
+
+### 3Dシーン
+
+* `three.js` を使って、ユーザーがインタラクティブに操作できる3Dシーンを実装。
+* 基本的な球体のレンダリングが可能。
