@@ -7,7 +7,7 @@ PBL型授業での制作物です。(企業名は明記していません。)
 ## 概要
 
 * **ログイン機能**：Googleアカウントでのログイン（Firebase Authentication）
-* **フロントエンド**：React（TypeScript）、Next.js（ルーティングとフォント管理）
+* **フロントエンド**：React・Next.js
 * **UIライブラリ**：MUI（Material UI）
 * **3Dレンダリング**：Three.jsで球体（3Dオブジェクト）の描画
 
@@ -79,9 +79,9 @@ Googleアカウントでユーザーがアプリケーションにログイン�
 
 ### 2. 3Dレンダリング
 
-Three.jsを使用して、3D球を描画します。ユーザーはマウスでインタラクティブに3Dシーンを操作できます。
+Three.jsを使用して、3D球を描画します。ユーザーはマウスでインタラクティブに3D球を操作できます。
 
-* `useEffect`と`useRef`を使って、Reactコンポーネント内でThree.jsの3Dシーンをレンダリングしています。
+* `useEffect`と`useRef`を使って、Reactコンポーネント内でThree.jsの3D球を描画しています。
 
 ---
 
@@ -103,17 +103,3 @@ Three.jsを使用して、3D球を描画します。ユーザーはマウスで�
 
 * **Firebase Authentication**: Googleアカウント認証
 * **Firebase Firestore**: ユーザーデータ保存（オプション）
-
----
-
-## 開発の進行
-
-### Firebase認証
-
-1. `firebase/auth`を使用してGoogleログイン機能を実装します。
-2. 認証後、ユーザー情報を表示する機能も追加予定です。
-
-### 3Dシーン
-
-* `three.js` を使って、ユーザーがインタラクティブに操作できる3Dシーンを実装。
-* 基本的な球体のレンダリングが可能。
