@@ -2,7 +2,7 @@
 PBL型授業での制作物です。(企業名は明記していません。)
 また、画像は実際のものとは異なり[こちら](https://github.com/Kazuhito00/royalty-free-360-degree-images?tab=readme-ov-file)の画像をお借りしています。
 
-制作した意図などはこちらに記載してあります。 [参考資料]([https://www.canva.com/design/DAGajx8OdDo/E1GVxqlqQJqMaA6RUltxZA/view?utm_content=DAGajx8OdDo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he7dd83e9fa])
+制作した意図などはこちらに記載してあります。 [参考資料](https://www.canva.com/design/DAGajx8OdDo/E1GVxqlqQJqMaA6RUltxZA/view?utm_content=DAGajx8OdDo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he7dd83e9fa)
 
 ## 概要
 
